@@ -1,0 +1,12 @@
+main {
+    grid-column: 2;
+    grid-row: 2;
+    
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+main::-webkit-scrollbar { 
+    display: none;
+}
