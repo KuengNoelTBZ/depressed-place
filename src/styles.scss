@@ -4,6 +4,8 @@ html {
     height: 100%;
     background: #000000;
     box-shadow: inset 0rem 0rem 5rem 2.5rem #111111;
+
+    transition: ease all 0.5s;
 }
 
 body {
@@ -14,43 +16,14 @@ body {
 
 app-root {
     display: grid;
-    grid-template-columns: 1fr 50rem 1fr;
-    grid-template-rows: 1fr 25rem 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 
     height: 100%;
 }
 
-@media only screen and (max-width: 800px) {
-    app-root {
-        grid-template-columns: 1fr max-content 1fr;
-        grid-template-rows: 1fr max-content 1fr;
+@media only screen and (max-width: 900px) {
+    html {
+        box-shadow: none;
     }
-}
-
-h1 {
-    margin: 0rem;
-}
-
-h3 {
-    margin: 0rem;
-}
-
-a {
-    padding: 1rem;
-    border: 0.05rem solid #ffffff;
-    border-radius: 0.125rem;
-    text-decoration: none;
-
-    transition: all 0.25s;
-}
-
-a:hover {
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-    border: 0.1rem solid #444444;
-    color: #444444;
-}
-
-* {
-    color: #ffffff;
-    font-family: 'Amatic SC', cursive;
 }

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import anime from 'animejs';
 
 @Component({
-  selector: 'p-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: [ './blog.component.scss' ]
+  selector: 'p-docs',
+  templateUrl: './docs.component.html',
+  styleUrls: [ './docs.component.scss' ]
 })
-export class BlogComponent implements OnInit {
+export class DocsComponent implements OnInit {
 
   constructor() { }
 

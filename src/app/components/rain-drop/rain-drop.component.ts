@@ -2,31 +2,54 @@ import { Component, OnInit } from '@angular/core';
 import anime from 'animejs';
 
 @Component({
-  selector: 'rain-drop',
+  selector: 'c-rain-drop',
   templateUrl: './rain-drop.component.html',
   styleUrls: [ './rain-drop.component.scss' ]
 })
 export class RainDropComponent implements OnInit {
+  src: string = '/assets/images/rain-drop.svg';
+  alt: string = 'rain-drop.svg';
+  style: string[] = [];
   rain_drop_id: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
+    this.checkDate();
     this.initRainDrop();
     this.setPositionX();
     this.animationCycle();
   }
 
-  initRainDrop(): void {
-    const rain_drops = document.getElementsByClassName('rain-drops');
+  checkDate(): void {
+    const today = new Date();
 
-    for (var i = 0; i < rain_drops.length; i++) {
-      if (!rain_drops[i].id) {
-        rain_drops[i].id = `rain-drop-${i}`;
-        this.rain_drop_id = `rain-drop-${i}`;
-        break;
-      }
+    if (today.getDate() == 20 && today.getMonth() + 1 == 4) {
+      this.src = '/assets/images/weed.svg';
+      this.alt = 'weed.svg';
+      this.style.push('color-weed');
+    } else if (today.getDate() == 25 && today.getMonth() + 1 == 10) {
+      this.src = '/assets/images/birthday.svg';
+      this.alt = 'birthday.svg';
+      this.style.push('color-normal');
+    } else if (today.getMonth() + 1 > 10 && today.getMonth() + 1 < 4) {
+      this.src = '/assets/images/snow.svg';
+      this.alt = 'snow.svg';
+      this.style.push('color-normal');
+    } else {
+      this.style.push('color-normal');
     }
+  }
+
+  initRainDrop(): void {
+    const rain_drops = document.querySelectorAll('[rain-drops]:not([id])');
+    rain_drops[0].id = `rain-drop-${rain_drops.length}`;
+    this.rain_drop_id = `rain-drop-${rain_drops.length}`;
+  }
+
+  setPositionX(): void {
+    const rain_drop = document.getElementById(this.rain_drop_id);
+    rain_drop?.setAttribute('style', `left: ${anime.random(0, window.innerWidth)}px`);
   }
 
   animationCycle(): void {
@@ -43,11 +66,6 @@ export class RainDropComponent implements OnInit {
         this.animationCycle();
       }
     });
-  }
-
-  setPositionX(): void {
-    const rain_drop = document.getElementById(this.rain_drop_id);
-    rain_drop?.setAttribute('style', `left: ${anime.random(0, window.innerWidth)}px`);
   }
 
 }

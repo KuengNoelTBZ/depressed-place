@@ -1,14 +1,7 @@
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+img {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
 
-    min-height: 100%;
-}
-
-#mouse {
-    width: 2.5rem;
-    pointer-events: none;
+    color: #ffffff;
+    border-radius: 0.125rem;
 }

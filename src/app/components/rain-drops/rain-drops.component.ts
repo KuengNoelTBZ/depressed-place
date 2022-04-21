@@ -1,7 +1,7 @@
 import { Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'rain-drops',
+  selector: 'c-rain-drops',
   templateUrl: './rain-drops.component.html',
   styleUrls: [ './rain-drops.component.scss' ]
 })

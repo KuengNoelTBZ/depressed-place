@@ -1,13 +1,17 @@
-[rain-drops] {
-    position: absolute;
-    top: -5rem;
-    width: 1.5rem;
-
-    color: #ffffff;
+[head] {
     font-family: 'Amatic SC', cursive;
+}
 
-    pointer-events: none;
-    user-select: none;
+.head-large {
+    font-size: 3rem;
+}
+
+.head-medium {
+    font-size: 2rem;
+}
+
+.head-small {
+    font-size: 1rem;
 }
 
 .color-normal {

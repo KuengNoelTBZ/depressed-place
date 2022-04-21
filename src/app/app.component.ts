@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, enableProdMode } from '@angular/core';
 import anime from 'animejs';
 
 @Component({
@@ -7,10 +7,14 @@ import anime from 'animejs';
   styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent {
+  touchX: number = 0;
+  touchY: number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
+    enableProdMode();
+
     anime({
       targets: 'main',
       delay: 1500,
