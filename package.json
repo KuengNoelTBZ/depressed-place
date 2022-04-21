@@ -1,6 +1,6 @@
 {
-  "name": "depression",
-  "version": "0.0.0",
+  "name": "depressed-place",
+  "version": "1.1.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
