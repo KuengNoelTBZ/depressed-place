@@ -11,6 +11,9 @@ export class LinkComponent implements OnInit {
 
   @Input()
   type: string = '';
+
+  @Input()
+  new_window: string = 'false';
   style: string[] = [];
 
   constructor() { }
@@ -47,7 +50,11 @@ export class LinkComponent implements OnInit {
   }
 
   redirect(): void {
-    location.href = this.href;
+    if (this.new_window == 'true') {
+      window.open(this.href);
+    } else {
+      location.href = this.href;
+    }
   }
 
 }
